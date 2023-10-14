@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useId, useRef, useState } from "react";
 import useSWR, { KeyedMutator } from "swr";
 import { nanoid, createChunkDecoder, COMPLEX_HEADER } from "@/lib/utils";
+import { getPrompt } from "./getPrompt";
 
 import type {
   ChatRequest,
@@ -604,14 +605,9 @@ export function useChat({
       e.preventDefault();
       if (!input) return;
 
-      // CREATE PROMPT HERE
-      const getPrompt = () => {
-        return `${githubData} + ${input}`;
-      };
-
       append(
         {
-          content: getPrompt(),
+          content: getPrompt(githubData, input),
           role: "user",
           createdAt: new Date(),
         },
