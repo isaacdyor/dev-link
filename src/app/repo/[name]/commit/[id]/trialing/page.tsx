@@ -1,12 +1,13 @@
 "use client";
 
-import { useChat } from "ai/react";
+import { useChat } from "@/lib/useChat";
 import { useState } from "react";
 
 export default function MyComponent() {
   const [requestMade, setRequestMade] = useState(false);
 
   const { messages, input, handleInputChange, handleSubmit } = useChat({
+    githubData: "can you say hello world three timese",
     api: "/api/chat",
   });
 
