@@ -4,7 +4,6 @@ import { useUser } from "@clerk/nextjs";
 import { NextPage } from "next";
 import { Octokit } from "octokit";
 import React, { useState } from "react";
-import { useRouter } from "next/router";
 import { File } from "@/types/types";
 import { useChat } from "ai/react";
 
