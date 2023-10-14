@@ -5,6 +5,7 @@ import { useChat } from "ai/react";
 import { FunctionCallHandler, nanoid } from "ai";
 
 export default function Chat() {
+  console.log("yoyotestest")
   const functionCallHandler: FunctionCallHandler = async (
     chatMessages,
     functionCall
@@ -37,6 +38,7 @@ export default function Chat() {
     api: "/api/trial",
     experimental_onFunctionCall: functionCallHandler,
   });
+
 
   // Generate a map of message role to text color
   const roleToColorMap: Record<Message["role"], string> = {
