@@ -5,7 +5,6 @@ import { useChat } from "ai/react";
 import { FunctionCallHandler, nanoid } from "ai";
 
 export default function Chat() {
-  console.log("yoyotestest")
   const functionCallHandler: FunctionCallHandler = async (
     chatMessages,
     functionCall
